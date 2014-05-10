@@ -1,0 +1,27 @@
+<html ng-app>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script type='text/javascript' src="angular.min.js"></script>
+  <script type='text/javascript' src="jquery.js"></script>
+  <script type='text/javascript' src="bootstrap.min.js"></script>
+</head>
+<body style="padding: 50px" 
+      ng-init="albums = [ 
+               { name: 'madrid1309', date: '2013-09-01', description: 'My favourite trip' },
+               { name: 'iceland1404', date: '2014-04-15', description: 'This place is cold' },
+               { name: 'thailand1210', date: '2012-10-01', description: 'So hot!' },
+               { name: 'australia1207', date: '2012-07-31', description: 'So many kangaroos and koalas!' } ]">
+
+  <div style="width: 300px; float: left; margin-right: 20px" ng-repeat="album in albums" class="panel panel-default">
+    <div class="panel-heading"> {{ album.name }} ({{ album.date }})</div>
+    <div class="panel-body">
+      {{ album.description }}
+    </div>
+  </div>
+  <div style="clear: left"></div>
+  <p> There are {{ albums.length }} albums so far!</p>
+
+</body>
+</html>
+
+

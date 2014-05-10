@@ -1,0 +1,42 @@
+<style type="text/css">
+  body {
+  background-color: black;
+}
+</style>
+
+<div keypress-events>
+
+<div class="alert alert-success" ng-show="load_error_text">
+  {{ load_error_text }}
+</div>
+
+<div ng-show="!done_loading" style="padding: 50px">
+  Loading ...
+</div>
+<div  ng-show="done_loading">
+  <div style="float: right; padding: 15px">
+    <a href="/index.html#/album/{{album_name}}">Back to Album</a>
+  </div>
+  <div style="clear: both"></div>
+  <div style="width: 900px; margin: 30px auto">
+    <div style="float: right" ng-show="photo_next_file">
+      <a href="/index.html#/album/{{album_name}}/photo/{{photo_next_file}}"> Next </a>
+    </div>
+    <div style="float: left" ng-show="photo_prev_file">
+      <a href="/index.html#/album/{{album_name}}/photo/{{photo_prev_file}}"> Prev </a>
+    </div>
+    <div style="text-align: center">
+      <img style="height: 500px; padding: 3px; background-color: #666; border-radius: 5px" ng-src="/media/{{ album_name }}/full/{{ photo_filename }}"/>
+    </div>
+  <div class="panel panel-default" style="width: 600px; background-color: #222; color: #bbb; margin: 20px auto;border: 1px solid #444">
+    <div class="panel-body">
+      {{ description }}
+This is something a wee bit longer that I hope will wrap and show me the correc tpath to enlightenment. Only through fire shall our sins be cleansed.
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+</div>

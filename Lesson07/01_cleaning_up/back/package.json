@@ -1,0 +1,9 @@
+{
+    "name": "photo_server",
+    "description": "Simple Demo backend for our photo server.",
+    "private": true,
+    "dependencies": {
+        "async": "0.2.x",
+        "express": "3.x"
+    }
+}

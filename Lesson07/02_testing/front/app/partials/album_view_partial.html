@@ -1,0 +1,41 @@
+
+
+
+<div style="width: 1000px; margin: 0 auto;  padding-top 20px">
+
+  <div style="float: right">
+    <a href="/index.html#/albums"> Back to Albums </a>
+  </div>
+
+  <div class="alert alert-danger" ng-show="page_load_error"> {{ page_load_error }} </div>
+
+  <h3> {{ album.title }} ({{ album.name }}) </h3>
+
+  <div class="alert alert-danger" ng-show="load_error_text"> {{ load_error_text }}</div>
+
+  <div class="panel panel-default" style="width: 990px; background-color: #fafafa">
+    <div class="panel-body">
+      {{ album.description }}
+    </div>
+  </div>
+
+  <div class="photo thumbnail" style="width: 240px; height: 250px; overflow: hidden; background-color: #f8f8f8; float: left; margin-right: 10px" ng-repeat="photo in album.photos">
+    <div style="width: 230px; height: 180px; overflow: hidden">
+      <a href="/index.html#/album/{{album_name}}/photo/{{photo.filename}}">
+        <img ng-src="/media/{{album_name}}/thumb/{{photo.filename}}"/>
+      </a>
+    </div>
+    <p style="padding: 5px 2px">
+      {{ photo.description }}
+    </p>
+  </div>
+
+  <div style="clear: left"></div>
+
+  <p>
+    <a href="index.html#/album/{{album_name}}/upload">
+      <button type="button" class="btn btn-success">Add files to this album</button>
+    </a>
+  </p>
+
+</div>

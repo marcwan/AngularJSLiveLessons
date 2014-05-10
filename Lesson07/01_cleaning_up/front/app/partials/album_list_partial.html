@@ -1,0 +1,55 @@
+
+  <div class="alert alert-danger" ng-show="page_load_error"> {{ page_load_error }} </div>
+
+  <div ng-show="!done_loading"> Loading page data .... </div>
+
+
+  <div style="clear: left"></div>
+
+  <div style="margin: 10px 50px" ng-show="done_loading">
+    <p><input placeholder="Type to search..." type="text" ng-model="searchFor" size="30"/></p>
+    <p>
+      Displaying {{ albums.length | pluralise:{ sing: "album", plur: "albums"}  }}:
+    </p>
+    <pa-album albumdata="album" ng-repeat="album in albums | multifieldfilter:{ findMe: searchFor, fields:['title', 'description'] } | orderBy:'date'"></pa-album>
+
+
+    <div style="clear: left"></div>
+
+
+<div controller="AddAlbumDialogController">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h4>Create a New Album</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" ng-show="add_album_error"> {{ add_album_error }} </div>
+      <form name="add_album_form" novalidate>
+
+<p style="width: 100%">
+          <div style="float: right">
+            <input name="date" type="text" placeholder="yyyy/mm/dd" size="20" ng-model="adding_album.date"/>
+          </div>
+          <input type="text" placeholder="Title..." size="30" ng-model="adding_album.title"/>
+</p>
+        <div class="description">
+          <p>
+            <textarea ng-model="adding_album.description" placeholder="Description..." rows="4" style="width: 100%"></textarea>
+          </p>
+          <p>
+            <input type="text" ng-model="adding_album.name" style="width: 100%"/>
+          </p>
+        </div>
+      </form>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+<button class="btn btn-success" ng-click="openAddAlbumDialog()">Create New Album</button>
+
+  </div>

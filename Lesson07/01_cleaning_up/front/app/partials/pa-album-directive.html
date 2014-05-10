@@ -1,0 +1,11 @@
+<div class='album panel panel-primary'>
+  <div class='panel-heading'>
+    <a href="index.html#/album/{{albumdata.name}}">
+      {{ albumdata.title }}
+    </a>
+  </div>
+  <div class='description'> {{ albumdata.description }}</div>
+  <div class="thumbnail" ng-show="albumdata.photos.length" style="width: 290px; max-height: 250px; overflow: hidden;margin: 4px ">
+      <img ng-src="/media/{{albumdata.name}}/thumb/{{albumdata.photos[0].filename}}"/>
+  </div>
+</div>

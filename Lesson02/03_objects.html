@@ -1,0 +1,29 @@
+<html ng-app>
+<head>
+  <script type='text/javascript' src="angular.min.js"></script>
+</head>
+<body style="padding: 50px" ng-init="eventObjects = [ 
+    { eventName: 'password_failure',
+      username: 'marcwan',
+      password_retries: 50,
+      from_host: '192.168.1.1',
+      when: '2014/04/04 12:55:32' },
+    { eventName: 'lost_wifi_connection',
+      username: 'marcwan',
+      local_ip: '192.168.100.100',
+      start_time: '2014/04/04 12:31:34' ,
+      end_time: '2014/04/04 12:35:27' } ]">
+
+  <div ng-repeat="event in eventObjects">
+    <div style="border: 1px solid #aaa; padding; 20px; margin: 20px">
+      <table border='0' cellspacing='0' cellpadding="5px">
+      <tr ng-repeat="(key, value) in event">
+        <td> {{key}} </td>
+        <td> {{value}} </td>
+      </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

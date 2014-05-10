@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+}
+
+input[type=text] {
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+}
+
+.album {
+  width: 300px;
+  float: left;
+  margin-right: 10px;
+}
+
+div.album div.title {
+  float: right;
+}

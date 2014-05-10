@@ -1,0 +1,44 @@
+<html ng-app>
+<head>
+  <link rel="stylesheet" href="01_controller.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script type='text/javascript' src="angular.min.js"></script>
+  <script type='text/javascript' src="jquery.min.js"></script>
+  <script type='text/javascript' src="bootstrap.min.js"></script>
+</head>
+
+<body ng-controller="AlbumListController">
+
+  <p>
+    <input type="text" placeholder="Search..." ng-model="searchFor" size="20"/>
+  </p>
+
+  <div class="album panel panel-primary" ng-repeat="album in albums | filter: { title: searchFor } ">
+    <div class="panel-heading"> {{ album.title }} <div class="title" >{{ album.date }}</div> </div>
+    <div class="panel-body">
+      {{ album.description }}
+    </div>
+  </div>
+
+
+
+<script type="text/javascript">
+
+function AlbumListController ($scope) {
+
+    $scope.albums = [ 
+        { name: 'madrid1309', title: 'Weekend in Madrid', date: '2013-09-01', description: 'My favourite trip' },
+        { name: 'iceland1404', title: 'Holiday in Iceland', date: '2014-04-15', description: 'This place is cold' },
+        { name: 'thailand1210', title: 'Surfing in Thailand', date: '2012-10-01', description: 'So hot!' },
+        { name: 'australia1207', title: 'Wedding in Australia', date: '2012-07-31', description: 'So many kangaroos and koalas!' }
+    ];
+
+}
+
+</script>
+
+</body>
+</html>
+
+
+

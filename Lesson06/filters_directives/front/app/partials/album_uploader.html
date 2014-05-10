@@ -1,0 +1,57 @@
+<div style="float: right; padding: 5px">
+  <a href="/index.html">Home</a>
+</div>
+
+<div style="clear: both"></div>
+<div class="alert alert-danger" ng-show="page_load_error">{{page_load_error}}</div>
+
+<p>
+  <input ng-file-select type="file" multiple />
+</p>
+
+<div style="border-radius: 4px; float: left; border: 1px solid #bbb; height: 200px; width: 300px; padding: 10px; margin-right: 10px; margin-bottom: 10px" ng-repeat="item in uploader.queue">
+  <div style="overflow: hidden; white-space: nowrap"><strong>Name:</strong> {{ item.file.name }}</div>
+  <div><strong>Size:</strong> {{ item.file.size/1024/1024|number:2 }} Mb</div>
+  <div>
+    <strong>Description:</strong> <br/>
+    <input type="text" ng-model="descriptions[item.file.name]" style="width: 100%; border: 1px solid #ddd"/>
+  </div>
+
+  <p ng-show="uploader.isHTML5">
+    Upload Progress: {{ item.progress }}
+    <div class="item-progress-box">
+      <div class="item-progress" ng-style="{ 'width': item.progress + '%' }"></div>
+    </div>
+  </p>
+
+  <div>
+    <button class="btn btn-primary" ng-click="item.remove()">Remove</button>
+  </div>
+</div>
+
+<div style="clear: left"></div>
+
+<div ng-show="uploader.queue.length > 0">
+  <div>
+    Total progress: {{ uploader.progress }}
+    <div class="total-progress-box">
+      <div class="total-progress" ng-style="{ 'width': uploader.progress + '%' }"></div>
+    </div>
+  </div>
+  <button class="btn btn-success" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">Upload all</button>
+  <button class="btn btn-warning" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">Cancel all</button>
+  <button class="btn btn-danger" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">Remove all</button>
+</div>
+
+
+
+
+
+
+
+
+<div style="text: center; margin: 20px 0">
+  <a ng-show="done_uploading" href="index.html#/album/{{album_name}}">
+    <button type="button" class="btn btn-success">Go back to album</button>
+  </a>
+</div>

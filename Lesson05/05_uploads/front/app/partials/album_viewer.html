@@ -1,0 +1,21 @@
+
+
+<div class="alert alert-danger" ng-show="page_load_error">{{page_load_error}}</div>
+
+<h4>{{album_name}}</h4>
+
+<div class="photo thumbnail" ng-repeat="photo in photos" style="width: 250px; float: left; margin-right: 10px">
+
+  <a href="index.html#/album/{{album_name}}/photos/{{photo.filename}}">
+    <img ng-src="/media/{{album_name}}/thumb/{{photo.filename}}"/>
+  </a>
+  <p> {{ photo.description }} </p>
+</div>
+
+
+
+<div style="clear: left"></div>
+
+<a href="index.html#/album/{{album_name}}/upload">
+<button type="button" class="btn btn-success">Add files to this album</button>
+</a>

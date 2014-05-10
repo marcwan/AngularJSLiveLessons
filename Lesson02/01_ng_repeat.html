@@ -1,0 +1,16 @@
+<html ng-app>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script type='text/javascript' src="angular.min.js"></script>
+  <script type='text/javascript' src="jquery.min.js"></script>
+  <script type='text/javascript' src="bootstrap.min.js"></script>
+</head>
+
+<body style="padding: 50px" ng-init="albumNames = [ 'madrid1309', 'iceland1404', 'thailand1210', 'australia1207' ]">
+
+  <ul>
+    <li ng-repeat="aname in albumNames">{{ aname }}</li>
+  </ul>
+
+</body>
+</html>

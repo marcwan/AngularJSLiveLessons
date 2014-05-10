@@ -1,0 +1,40 @@
+<html ng-app="photoSharingApp">
+<head>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-route.min.js"></script>
+  <script type="text/javascript" src="js/angular-animate.js"></script>
+  <script type="text/javascript" src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="js/angular-file-upload.js"></script>
+  <script type="text/javascript" src="js/angular-cookies.js"></script>
+
+  <!-- put controllers and modules here -->
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/controllers/albumlistcontroller.js"></script>
+  <script type="text/javascript" src="app/controllers/albumviewcontroller.js"></script>
+  <script type="text/javascript" src="app/controllers/albumuploadcontroller.js"></script>
+  <script type="text/javascript" src="app/controllers/photoviewcontroller.js"></script>
+
+  <script type="text/javascript" src="app/services/albumservice.js"></script>
+
+</head>
+
+<body>
+  <div id="top_bar">
+    <a href="index.html#/"><div class="glyphicon glyphicon-camera"></div></a>
+      <div id="title"> My Photo Albums </div>
+  </div>
+
+<div class="view-animate-container">
+  <ng-view class="view-animate"></ng-view>
+</div>
+</body>
+
+</html>
+
+
+
